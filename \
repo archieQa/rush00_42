@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lqamo <luars.qamo@learner.42.tech>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/06 14:32:19 by lqamo             #+#    #+#             */
+/*   Updated: 2026/02/07 14:37:01 by lqamo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void    ft_print_combn(int n)
+{
+        int     digits[10];
+        int     i;
+        int     pos;
+
+        if (n <= 0 || n >= 10)
+                return;
+
+        i = 0;
+        while (i < n)
+        {
+                digits[i] = i;
+                i++;
+        }
+
+        while (1)
+        {
+                i = 0;
+                while (i < n)
+                {
+                        char c = digits[i] + '0';
+                        write(1, &c, 1);
+                        i++;
+                }
+
+                if (digits[0] == 10 - n)
+                        break;
+                write(1, ", ", 2);
+
+                pos = n - 1;
+                while (pos >= 0 && digits[pos] == 9 - (n - 1 - pos))
+                        pos--;
+
+                digits[pos]++;
+                while (++pos < n)
+                        digits[pos] = digits[pos - 1] + 1;
+        }
+}
+
