@@ -6,7 +6,7 @@
 /*   By: lqamo <luars.qamo@learner.42.tech>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 14:39:17 by lqamo             #+#    #+#             */
-/*   Updated: 2026/02/08 14:41:44 by lqamo            ###   ########.fr       */
+/*   Updated: 2026/02/08 15:01:22 by lqamo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@ void	rush(int x, int y);
 
 int	main(void)
 {
+	rush(5, 3);
+	write(1, "\n", 1); 
+	rush(5, 1);
+	write(1, "\n", 1); 
 	rush(1, 1);
-	write(1, "\n", 1);
-	rush(2, 1);
-	write(1, "\n", 1);
-	rush(1, 2);
-	write(1, "\n", 1);
-	rush(2, 2);
-	write(1, "\n", 1);
-	rush(2, 3);
-	write(1, "\n", 1);
-	rush(3, 2);
-	write(1, "\n", 1);
-	rush(2, 70);
+	write(1, "\n", 1); 
+	rush(1, 5);
+	write(1, "\n", 1); 
+	rush(4, 4);
 	return (0);
 }
